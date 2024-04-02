@@ -1,0 +1,516 @@
+
+body {
+  background: #fff;
+}
+
+section {
+  margin: 0 auto;
+  text-align: center;
+  width: 960px;
+}
+
+.hex_row_even {
+  display: inline-block;
+  margin: 0 auto -275px auto;
+  overflow: hidden;
+}
+
+.hex_row_odd {
+  display: inline-block;
+  margin: 0 auto -275px auto;
+  overflow: hidden;
+} 
+
+.center {
+  float: left;
+  margin: 20px 10px;
+  width: 220px;
+}
+
+.hexagon {
+  cursor: pointer;
+  height: 440px; /* ($width *2) */
+  overflow: hidden;
+  visibility: hidden;
+  width: 220px;
+}
+
+.hex1 {
+  transform: rotate(-60deg); /* Change the rotation to 0 degrees */
+  height: 100%;
+  overflow: hidden;
+  width: 100%;
+}
+
+.hex2 {
+  transform: rotate(-60deg); /* Adjusted rotation to counteract the previous rotation */
+  height: 100%;
+  position: relative;
+  visibility: visible;
+  width: 100%;
+}
+
+.hex2[style] {
+  background-size: cover!important;
+}
+
+.desc {
+  color: white;
+  font-family: 'Lato', sans-serif;
+  font-size: 1.5em;
+  font-weight: 300;
+  height: 440px; /* ($width * 2) */
+  line-height: 1.5em;
+  position: absolute;
+  text-align: center;
+  text-transform: uppercase; 
+  visibility: visible;
+  width: 220px;
+}
+
+.desc.base {
+  background: rgba(230,0,98,.75); /* $pink */
+}
+
+.desc.one {
+  background: rgba(252,171,55,.75); /* $yellow */
+}
+
+.desc.two {
+  background: rgba(169,160,50,.75); /* $green */
+}
+
+.desc.three {
+  background: rgba(83,70,54,.75); /* $brown */
+}
+
+.desc h2 {
+  margin: 150px 20px 0 20px; /* ($width - ($width / 4)) */
+}
+
+.desc p {
+  font-size: .5em;
+  text-transform: lowercase;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.title {
+  font-family: "Raleway";
+  font-size: 28px;
+  font-weight: 700;
+  color: #000000;
+  text-align: center;
+}
+
+p {
+  line-height: 1.5em;
+}
+
+h1+p, p+p {
+  margin-top: 10px;
+}
+
+
+
+
+
+
+
+
+
+
+.container {
+  padding: 40px 80px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+
+
+.card-wrap {
+  width: calc(25% - 20px); /* Adjust width to fit four cards in a row */
+  margin: 50px; /* Adjust margin as needed */
+  transform: perspective(800px);
+  transform-style: preserve-3d;
+  cursor: pointer;
+}
+
+
+
+.card-wrap:hover .card-info {
+  transform: translateY(0);
+}
+
+.card-wrap:hover .card-info p {
+  opacity: 1;
+}
+
+.card-wrap:hover .card-info,
+.card-wrap:hover .card-info p {
+  transition: 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.card-wrap:hover .card-info:after {
+  transition: 5s cubic-bezier(0.23, 1, 0.32, 1);
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.card-wrap:hover .card-bg {
+  transition: 
+    0.6s cubic-bezier(0.23, 1, 0.32, 1),
+    opacity 5s cubic-bezier(0.23, 1, 0.32, 1);
+  opacity: 0.8;
+}
+
+.card-wrap:hover .card {
+  transition:
+    0.6s cubic-bezier(0.23, 1, 0.32, 1),
+    box-shadow 2s cubic-bezier(0.23, 1, 0.32, 1);
+  box-shadow:
+    rgba(255, 255, 255, 0.2) 0 0 40px 5px,
+    rgba(255, 255, 255, 1) 0 0 0 1px,
+    rgba(0, 0, 0, 0.66) 0 30px 60px 0,
+    inset #333 0 0 0 5px,
+    inset white 0 0 0 6px;
+}
+
+.card {
+  position: relative;
+  flex: 0 0 240px;
+  width: 240px;
+  height: 320px;
+  background-color: #333;
+  overflow: hidden;
+  border-radius: 10px;
+  box-shadow:
+    rgba(0, 0, 0, 0.66) 0 30px 60px 0,
+    inset #333 0 0 0 5px,
+    inset rgba(255, 255, 255, 0.5) 0 0 0 6px;
+  transition: 1s cubic-bezier(0.445, 0.05, 0.55, 0.95);
+}
+
+.card-bg {
+  opacity: 0.5;
+  position: absolute;
+  top: -20px;
+  left: -20px;
+  width: 100%;
+  height: 100%;
+  padding: 20px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  transition:
+    1s cubic-bezier(0.445, 0.05, 0.55, 0.95),
+    opacity 5s 1s cubic-bezier(0.445, 0.05, 0.55, 0.95);
+  pointer-events: none;
+}
+
+.card-info {
+  padding: 20px;
+  position: absolute;
+  bottom: 0;
+  color: #fff;
+  transform: translateY(40%);
+  transition: 0.6s 1.6s cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+
+.card-info p {
+  opacity: 0;
+  text-shadow: rgba(0, 0, 0, 1) 0 2px 3px;
+  transition: 0.6s 1.6s cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+
+.card-info * {
+  position: relative;
+  z-index: 1;
+}
+
+.card-info:after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 0;
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, 0.6) 100%);
+  background-blend-mode: overlay;
+  opacity: 0;
+  transform: translateY(100%);
+  transition: 5s 1s cubic-bezier(0.445, 0.05, 0.55, 0.95);
+}
+
+/* Card info styles */
+
+.card-info .card-title {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.card-info h1 {
+  font-size: 24px; /* Adjust font size as needed */
+  font-weight: bold; /* Adjust font weight as needed */
+  color: #fff; /* Text color */
+  background-color: rgb(0, 0, 0);
+  margin-bottom: 10px; /* Bottom margin */
+  text-align: center}
+
+  .card-info button {
+    background-color: #000000; /* Button background color */
+    color: #fff; /* Button text color */
+    border: none; /* Remove button border */
+    padding: 10px 20px; /* Adjust button padding as needed */
+    font-size: 16px; /* Adjust button font size as needed */
+    cursor: pointer; /* Show pointer cursor on hover */
+    transition: background-color 0.3s ease; /* Smooth transition for background color */
+  }
+  
+  .card-info button:hover {
+    background-color: #000000; /* Change background color on hover */
+  }
+  /* Add this CSS to your existing home.css file */
+
+
+
+
+
+
+  
+/* Welcome Section */
+.welcome {
+  background: linear-gradient(to bottom right, #55355d, #a769a7); /* Updated gradient colors */
+  padding: 80px 0;
+  text-align: center;
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2); /* Increased box shadow */
+}
+
+.welcome-content {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.welcome-content h2 {
+  font-size: 48px; /* Increased font size */
+  font-weight: bold;
+  margin-bottom: 30px;
+  color: #fff;
+  animation: fadeInDown 1s ease-out; /* Apply animation */
+}
+
+.welcome-content p {
+  font-size: 20px;
+  line-height: 1.6;
+  color: #f0f0f0;
+  animation: fadeInUp 1s ease-out; /* Apply animation */
+}
+
+/* Contact Info */
+.contact-info {
+  direction: rtl;
+  text-align: right;
+  font-family: Arial, sans-serif;
+  margin-top: 40px; /* Increased top margin */
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 10px; /* Increased border radius */
+  background-color: rgba(255, 255, 255, 0.9); /* Added background color with transparency */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Added box shadow */
+}
+
+.info-item {
+  margin-bottom: 15px;
+}
+
+.info-item i {
+  margin-right: 10px; /* Increased margin */
+  color: #a769a7; /* Changed icon color */
+}
+
+
+.info-item span {
+  font-size: 18px; /* Increased font size */
+  color: #333; /* Darker color for text */
+  font-weight: bold;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+.workers {
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start; /* Align items at the start of the flex container */
+  height: auto; /* Auto height to accommodate content */
+  margin-top: 20px; /* Add margin at the top */
+}
+
+.worker {
+  text-align: center;
+  margin-bottom: 20px; /* Add margin between cards */
+}
+
+.worker-card  {
+  width: 300px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  opacity: 0;
+  animation: fadeIn 1s ease-out forwards;
+}
+
+.worker img {
+  width: 100%;
+  height: 250px; /* Fixed height for all images */
+  object-fit: cover; /* Ensure images cover their container */
+  border-radius: 10px 10px 0 0;
+  transition: transform 0.3s ease-in-out;
+}
+
+.worker:hover .card {
+  transform: translateY(-10px);
+}
+
+.worker img:hover {
+  transform: scale(1.1);
+}
+
+.name {
+  margin: 10px 0;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.description {
+  font-size: 14px;
+  color: #555;
+  margin-bottom: 10px; /* Add margin at the bottom */
+}
+
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+
+
+
+/* Add your custom CSS styles here */
+.video-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Ensure full viewport height */
+  margin: 0;
+}
+
+.video-container {
+  text-align: center; /* Center the content */
+}
+
+.tiktok {
+  margin-bottom: 10px; /* Add margin below the video */
+}
+
+.tiktok iframe {
+  width: 100%; /* Set width to 100% */
+  height: 570px; /* Set height to 500px */
+  border: none; /* Remove iframe border */
+  overflow: hidden; /* Hide scrollbars */
+}
+
+button {
+  background-color: #4CAF50; /* Green */
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 10px;
+}
+
+button:hover {
+  background-color: #45a049;
+}
+
+
+
+
+
+/* Footer Styles */
+
+footer {
+  background-color: #333; /* Set background color */
+  color: #fff; /* Set text color */
+  padding: 20px 0; /* Add padding */
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.footer-logo {
+  width: 100px; /* Adjust width of logo container */
+  height: 100px; /* Adjust height of logo container */
+  border-radius: 50%; /* Make logo container circular */
+  overflow: hidden; /* Hide overflow content */
+}
+
+.footer-logo img {
+  width: 100%; /* Set logo width to fill container */
+  height: auto; /* Maintain aspect ratio */
+}
+
+.footer-info {
+  flex: 1;
+  max-width: 300px; /* Limit width of info section */
+}
+
+.footer-info p {
+  margin: 5px 0; /* Add margin between paragraphs */
+}
+
+.footer-bottom {
+  text-align: center; /* Center align text */
+  margin-top: 10px; /* Add space between content and bottom */
+}

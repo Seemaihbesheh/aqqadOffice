@@ -16,17 +16,17 @@
 
   <div style="text-align: center;">
     <div style="display: inline-block;">
-        <img src="./images/logo.png" alt="Logo" style="width: 130px; height: 90px; margin-right: -460px;">
+      <img src="./images/logo.png" alt="Logo" style="width: 130px; height: 90px; margin-right: -460px;">
     </div>
     <div style="display: inline-block; vertical-align: middle;">
-        <h1 style="
+      <h1 style="
             font-family: 'Lato', sans-serif;
             font-size: 4em;
             font-weight: 300;
             margin: 0 10px -60px; /* Adjusted margin */
         ">مكتب العقاد الهندسي</h1>
     </div>
-</div>
+  </div>
 
 
 
@@ -35,6 +35,15 @@
     <!-- Hexagons will be dynamically added here -->
   </section>
 
+
+  <section id="hexMobile">
+    <div class="big-image">
+      <img src='./images/majd/majd0 - Copy.png' alt="Big Image">
+      <div class="small-image">
+        <img src='./images/ishraf/ishraf4.png' alt="Small Image">
+      </div>
+    </div>
+  </section>
 
 
 
@@ -89,53 +98,57 @@
 
 
 
-<!-- Video Section -->
-<div class="video-section">
-  <!-- Video Container with Title -->
-  <div class="video-container">
-    <h1> مشاريعنا</h1>
-    <div class="tiktok">
-      <iframe 
-        src="https://www.tiktok.com/embed/v2/7350054541645106439?lang=en-US&is_copy_url=0&is_from_webapp=v1&sender_device=pc&sender_web_id=7010426192464468494"
-        frameborder="0" scrolling="no"></iframe>
-    </div>
-    <div>
-      <!-- Replace anchor tag with button tag -->
-      <button onclick="window.open('https://www.tiktok.com/@memecivil', '_blank')">اضغط هنا لرؤية المزيد</button>
+  <!-- Video Section -->
+  <div class="video-section">
+    <!-- Video Container with Title -->
+    <div class="video-container">
+      <h1> مشاريعنا</h1>
+      <div class="tiktok">
+        <iframe
+          src="https://www.tiktok.com/embed/v2/7350054541645106439?lang=en-US&is_copy_url=0&is_from_webapp=v1&sender_device=pc&sender_web_id=7010426192464468494"
+          frameborder="0" scrolling="no"></iframe>
+      </div>
+      <div>
+        <!-- Replace anchor tag with button tag -->
+        <button onclick="window.open('https://www.tiktok.com/@memecivil', '_blank')">اضغط هنا لرؤية المزيد</button>
+      </div>
     </div>
   </div>
-</div>
- 
-<div style="height: 100px;"></div>
 
-<!-- Footer Section -->
-<footer>
-  <div class="footer-content">
-    <div class="footer-logo">
-      <img src="./images/logo.png" alt="Aqqad Civil Engineering Office Logo">
+  <div style="height: 100px;"></div>
+
+  <!-- Footer Section -->
+  <footer>
+    <div class="footer-content">
+      <div class="footer-logo">
+        <img src="./images/logo.png" alt="Aqqad Civil Engineering Office Logo">
+      </div>
+      <div class="footer-info">
+        <p>Address: نابلس شارع سفيان, عماره الشنار </p>
+        <p>Email: Alaqqad2022@gmail.com</p>
+      </div>
     </div>
-    <div class="footer-info">
-      <p>Address:  نابلس شارع سفيان, عماره الشنار </p>
-      <p>Email: Alaqqad2022@gmail.com</p>
-    </div>
-  </div>
- 
-</footer>
+
+  </footer>
 
 
 
   <script>
+
+
+
     document.addEventListener("DOMContentLoaded", function () {
       const hexData = [
         { image: './images/majd/majd0.png', descClass: '' },
         { image: './images/majd/majd1.png', descClass: '' },
-      
+
         { image: './images/majd/amenah.png', descClass: '' },
 
         { image: './images/majd/majd6.png', descClass: '' },
         { image: './images/majd/ishraf5.png', descClass: '' },
         { image: './images/majd/majd12.png', descClass: '' },
         { image: './images/majd/majd4.png', descClass: '' },
+        
       ];
 
       const section = document.getElementById("hexSection");
@@ -238,12 +251,12 @@
 
     document.addEventListener("DOMContentLoaded", function () {
       const workersData = [
-        
-        { name: "م. زين شحبري", description: "مهندسة معماري", image: "./images/zain.png" },
-        { name: "م. محي الدين ابو عبيد", description: "مهندس مدني ومساحة", image: "./images/mohye.jpg" },
-        { name: "م.امنة العقاد", description: "رئيسة اختصاص معماري" , image: "./images/majd/amenah2.png" },
+      { name: "م. مجد العقاد", description: " رئيسة اختصاص مدني ", image: "./images/majd/majd0 - Copy.png" },
+      { name: "م.امنة العقاد", description: "رئيسة اختصاص معماري", image: "./images/majd/amenah2.png" },
+      { name: "م. محي الدين ابو عبيد", description: "مهندس مدني ومساحة", image: "./images/moh3.png" },
 
-        { name: "م. مجد العقاد", description: " رئيسة اختصاص مدني ", image: "./images/majd/majd0 - Copy.png" },
+        { name: "م. زين شحبري", description: "مهندسة معماري", image: "./images/img/zain.png" },
+
 
 
       ];

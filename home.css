@@ -8,6 +8,9 @@ section {
   text-align: center;
   width: 960px;
 }
+#hexMobile {
+  display: none;
+}
 
 .hex_row_even {
   display: inline-block;
@@ -514,3 +517,187 @@ footer {
   text-align: center; /* Center align text */
   margin-top: 10px; /* Add space between content and bottom */
 }
+
+
+
+
+
+
+
+
+/* Add your existing CSS styles above */
+
+/* Responsive CSS */
+
+/* Adjustments for smaller screens */
+@media only screen and (max-width: 768px) {
+  section {
+    width: 90%; /* Adjust width of sections */
+
+  }
+
+  #hexSection {
+    display: none; /* Hide the hexSection on mobile devices */
+  }
+
+  
+  #hexMobile {
+    margin-top: 100px;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .big-image {
+    position: relative;
+    width: 400px; /* Adjust width of big image container */
+    height: 300px; /* Adjust height of big image container */
+    border-radius: 10px; /* Add border radius for rounded corners */
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1); /* Add subtle shadow effect */
+    transition: box-shadow 0.3s ease; /* Add transition effect for box-shadow */
+  }
+  
+  .big-image:hover {
+    box-shadow: 0 0 40px rgba(0, 0, 0, 0.3); /* Increase shadow on hover */
+  }
+  
+  .big-image img {
+    width: 100%; /* Ensure big image fills its container */
+    height: 100%; /* Ensure big image fills its container */
+    object-fit: cover; /* Maintain aspect ratio */
+    transition: transform 0.3s ease; /* Add transition effect for transform */
+  }
+  
+  .big-image:hover img {
+    transform: scale(1.05); /* Enlarge big image on hover */
+  }
+  
+  .small-image {
+    position: absolute;
+    top: 97%; /* Position small image vertically centered */
+    left: 0; /* Initial position at the left */
+    transform: translate(-100%, -50%); /* Move the small image to the left */
+    z-index: 1; /* Ensure small image appears on top of big image */
+    transition: left 1s ease-in-out; /* Add transition effect for position */
+  }
+  
+  .small-image img {
+    width: 250px; /* Adjust width of small image */
+    height: 200px; /* Maintain aspect ratio */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add shadow effect */
+  }
+  
+  .small-image img:hover {
+    transform: scale(1.1); /* Enlarge small image on hover */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4); /* Increase shadow on hover */
+  }
+  
+  /* Animation to move small image from left to center */
+  @keyframes moveFromLeft {
+    0% {
+      left: 0;
+    }
+    100% {
+      left: 80%; /* Move the small image to the center */
+    }
+  }
+  
+  /* Apply animation to small image */
+  .small-image {
+    animation: moveFromLeft 1s ease forwards; /* Apply animation forwards */
+  }
+  
+  
+
+
+  
+/* Animation for welcome section */
+.welcome {
+  opacity: 0;
+  transform: translateY(20px); /* Initial position off-screen */
+  animation: fadeInUp 1s ease forwards; /* Apply animation forwards */
+}
+.welcome-content h2{
+font-size: xx-large;
+}
+.welcome-content p{
+  font-size: large;
+  }
+
+.contact-info{
+  padding: 10px;
+}
+
+.info-item {
+  margin-bottom: 15px;
+}
+
+.info-item i {
+  margin-right: 10px; /* Increased margin */
+  color: #a769a7; /* Changed icon color */
+}
+
+
+.info-item span {
+  font-size: 15px; /* Increased font size */
+  color: #333; /* Darker color for text */
+  font-weight: bold;
+  margin-left: 70px;
+}
+
+
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px); /* Initial position off-screen */
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0); /* Move to original position */
+  }
+}
+
+
+/* Adjustments for card-wrap and workers */
+
+
+.container {
+
+  margin-right: 72%;
+}
+
+.card-wrap {
+  width: calc(50% - 20px); /* Adjust width to fit two cards in a row */
+  margin: 20px; /* Adjust margin */
+}
+.workers {
+  margin-left: auto; /* Reset left margin */
+  margin-right: auto; /* Reset right margin */
+}
+
+/* Adjustments for workers */
+.workers {
+  flex-wrap: wrap; /* Wrap workers */
+  justify-content: center; /* Center align workers */
+}
+
+.worker {
+  margin-bottom: 20px; /* Adjust margin */
+  flex: 0 0 45%; /* Adjust worker card width */
+}
+
+/* Adjustments for video container */
+.video-container {
+  margin-left: auto; /* Reset left margin */
+  margin-right: auto; /* Reset right margin */
+}
+
+/* Adjustments for footer content and logo */
+.footer-content{
+  margin-left: 60px;
+}
+.footer-logo img{
+  width: 60%;
+}
+}
+

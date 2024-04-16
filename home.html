@@ -52,16 +52,13 @@
 
 
 
-  <section class="welcome">
+  <section class="welcome animate-on-scroll">
     <div class="welcome-content">
       <h2>مكتب العقاد الهندسي يرحب بكم</h2>
 
       <p>
-        مكتب هندسي متخصص في التصميم والإشراف الهندس - التصميم الداخلي والخارجي وتراخيص المنشآت
+        مكتب هندسي متخصص في التصميم والإشراف الهندسي - التصميم الداخلي والخارجي وتراخيص المنشآت
         السكنية والتجارية والصناعية والزراعية - تحضير العطاءات والاشراف عليها
-
-
-
       </p>
       <div class="contact-info" id="contactInfo">
         <!-- Info items will be dynamically added here -->
@@ -78,7 +75,7 @@
 
   <section>
     <h1 class="title">التخصصات</h1>
-    <div id="app" class="container">
+    <div id="app" class="container animate-on-scroll">
     </div>
   </section>
 
@@ -88,7 +85,7 @@
   <div>
     <h1 class="title">طاقم المكتب الهندسي</h1>
     <div style="height: 30px;"></div>
-    <div id="workers" class="workers">
+    <div id="workers" class="workers ">
 
     </div>
   </div>
@@ -135,6 +132,27 @@
 
   <script>
 
+document.addEventListener("DOMContentLoaded", function () {
+  window.addEventListener("scroll", function () {
+    const elements = document.querySelectorAll(".animate-on-scroll");
+    elements.forEach(function (element) {
+      if (isElementInViewport(element)) {
+        element.classList.add("animated");
+      }
+    });
+  });
+
+  function isElementInViewport(el) {
+    var rect = el.getBoundingClientRect();
+    return (
+      rect.top >= 0 &&
+      rect.left >= 0 &&
+      rect.bottom <=
+        (window.innerHeight || document.documentElement.clientHeight) &&
+      rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+    );
+  }
+});
 
 
     document.addEventListener("DOMContentLoaded", function () {
@@ -180,7 +198,7 @@
 
     document.addEventListener("DOMContentLoaded", function () {
       const contactData = [
-        { icon: 'fas fa-user', text: ' مديرة المكتب: م.مجد العقاد (رئيسة الاختصاص المدني)' },
+        { icon: 'fas fa-user', text: ' مديرة المكتب: م.مجد العقاد (رئيسة اختصاص مدني)' },
         { icon: 'fas fa-phone', text: "رقم الجوال :00972592849217" },
         { icon: 'fas fa-phone', text: 'هاتف أرضي: 092386392' },
         { icon: 'fas fa-envelope', text: 'البريد الإلكتروني: Alaqqad2022@gmail.com' },
@@ -226,17 +244,22 @@
         const cardWrap = document.createElement("div");
         cardWrap.className = "card-wrap";
         cardWrap.innerHTML = `
-        <div class="card" style="background-image: url('${service.image}');">
-          <div class="card-bg"></div>
-          <div class="card-info">
-            <h1>${service.title}</h1>
-            <button onclick="viewMore(${index + 1})">رؤية المزيد ..</button>
-          </div>
+
+        <div> 
+        <div class="card" style="background-image: url('${service.image}');">         
+          <div class="card-bg"></div>    
+          <div class="card-info">       
+            <button  onclick="viewMore(${index + 1})">رؤية المزيد ..</button>
+          </div>   
+        </div>
+        <h2 class="">${service.title}</h1>
         </div>
       `;
         appContainer.appendChild(cardWrap);
       });
     });
+
+
 
     function viewMore(id) {
       window.location.href = `services.html?id=${id}`;
@@ -276,6 +299,8 @@
         workersContainer.appendChild(workerDiv);
       });
     });
+
+    
   </script>
 </body>
 

@@ -1,6 +1,6 @@
 
 body {
-  background: #efeaef;
+  background: #ffffff;
 }
 
 section {
@@ -29,6 +29,11 @@ section {
   margin: 20px 10px;
   width: 220px;
 }
+
+
+
+
+
 
 .hexagon {
   cursor: pointer;
@@ -121,8 +126,6 @@ h1+p, p+p {
 
 
 
-
-
 .container {
   padding: 40px 80px;
   display: flex;
@@ -130,54 +133,28 @@ h1+p, p+p {
   justify-content: center;
 }
 
-
-
 .card-wrap {
-  width: calc(25% - 20px); /* Adjust width to fit four cards in a row */
-  margin: 50px; /* Adjust margin as needed */
-  transform: perspective(800px);
-  transform-style: preserve-3d;
-  cursor: pointer;
+  width: calc(25% - 20px);
+  margin: 50px;
+  transform: perspective(800px) rotateY(0deg);
+  transition: transform 0.5s ease; /* Add transition for transform */
 }
 
-
+.card-wrap:hover {
+  transform: perspective(800px) rotateY(10deg);
+}
 
 .card-wrap:hover .card-info {
-  transform: translateY(0);
-}
-
-.card-wrap:hover .card-info p {
-  opacity: 1;
-}
-
-.card-wrap:hover .card-info,
-.card-wrap:hover .card-info p {
-  transition: 0.6s cubic-bezier(0.23, 1, 0.32, 1);
-}
-
-.card-wrap:hover .card-info:after {
-  transition: 5s cubic-bezier(0.23, 1, 0.32, 1);
   opacity: 1;
   transform: translateY(0);
 }
 
 .card-wrap:hover .card-bg {
-  transition: 
-    0.6s cubic-bezier(0.23, 1, 0.32, 1),
-    opacity 5s cubic-bezier(0.23, 1, 0.32, 1);
   opacity: 0.8;
 }
 
 .card-wrap:hover .card {
-  transition:
-    0.6s cubic-bezier(0.23, 1, 0.32, 1),
-    box-shadow 2s cubic-bezier(0.23, 1, 0.32, 1);
-  box-shadow:
-    rgba(255, 255, 255, 0.2) 0 0 40px 5px,
-    rgba(255, 255, 255, 1) 0 0 0 1px,
-    rgba(0, 0, 0, 0.66) 0 30px 60px 0,
-    inset #333 0 0 0 5px,
-    inset white 0 0 0 6px;
+  box-shadow: rgba(255, 255, 255, 0.2) 0 0 40px 5px, rgba(255, 255, 255, 1) 0 0 0 1px, rgba(0, 0, 0, 0.66) 0 30px 60px 0, inset #333 0 0 0 5px, inset white 0 0 0 6px;
 }
 
 .card {
@@ -188,11 +165,8 @@ h1+p, p+p {
   background-color: #333;
   overflow: hidden;
   border-radius: 10px;
-  box-shadow:
-    rgba(0, 0, 0, 0.66) 0 30px 60px 0,
-    inset #333 0 0 0 5px,
-    inset rgba(255, 255, 255, 0.5) 0 0 0 6px;
-  transition: 1s cubic-bezier(0.445, 0.05, 0.55, 0.95);
+  box-shadow: rgba(0, 0, 0, 0.66) 0 30px 60px 0, inset #333 0 0 0 5px, inset rgba(255, 255, 255, 0.5) 0 0 0 6px;
+  transition: box-shadow 0.5s ease; /* Add transition for box-shadow */
 }
 
 .card-bg {
@@ -200,15 +174,13 @@ h1+p, p+p {
   position: absolute;
   top: -20px;
   left: -20px;
-  width: 100%;
-  height: 100%;
+  width: calc(100% + 40px);
+  height: calc(100% + 40px);
   padding: 20px;
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
-  transition:
-    1s cubic-bezier(0.445, 0.05, 0.55, 0.95),
-    opacity 5s 1s cubic-bezier(0.445, 0.05, 0.55, 0.95);
+  transition: opacity 0.5s ease; /* Add transition for opacity */
   pointer-events: none;
 }
 
@@ -216,15 +188,17 @@ h1+p, p+p {
   padding: 20px;
   position: absolute;
   bottom: 0;
+  left: 0;
+  width: 100%;
   color: #fff;
-  transform: translateY(40%);
-  transition: 0.6s 1.6s cubic-bezier(0.215, 0.61, 0.355, 1);
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.5s ease, transform 0.5s ease; /* Add transition for opacity and transform */
 }
 
 .card-info p {
   opacity: 0;
   text-shadow: rgba(0, 0, 0, 1) 0 2px 3px;
-  transition: 0.6s 1.6s cubic-bezier(0.215, 0.61, 0.355, 1);
 }
 
 .card-info * {
@@ -237,93 +211,107 @@ h1+p, p+p {
   position: absolute;
   top: 0;
   left: 0;
-  z-index: 0;
   width: 100%;
   height: 100%;
   background-image: linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, 0.6) 100%);
   background-blend-mode: overlay;
   opacity: 0;
   transform: translateY(100%);
-  transition: 5s 1s cubic-bezier(0.445, 0.05, 0.55, 0.95);
-}
-
-/* Card info styles */
-
-.card-info .card-title {
-  font-size: 24px;
-  font-weight: bold;
-  margin-bottom: 10px;
+  transition: opacity 0.5s ease; /* Add transition for opacity */
 }
 
 .card-info h1 {
-  font-size: 24px; /* Adjust font size as needed */
-  font-weight: bold; /* Adjust font weight as needed */
-  color: #efeaef; /* Text color */
-  background-color: #efeaef;
-  margin-bottom: 10px; /* Bottom margin */
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 10px;
   color: #000000;
-  text-align: center}
-
-  .card-info button {
-    background-color: #efeaef; /* Button background color */
-    color: #000000; /* Button text color */
-    border: none; /* Remove button border */
-    padding: 10px 20px; /* Adjust button padding as needed */
-    font-size: 16px; /* Adjust button font size as needed */
-    cursor: pointer; /* Show pointer cursor on hover */
-    transition: background-color 0.3s ease; /* Smooth transition for background color */
-  }
-  
-  .card-info button:hover {
-    background-color: #efe3ef; /* Change background color on hover */
-  }
-  /* Add this CSS to your existing home.css file */
-
-
-
-
-
-
-  
-/* Welcome Section */
-.welcome {
-  background: linear-gradient(to bottom right, #55355d, #a769a7); /* Updated gradient colors */
-  padding: 80px 0;
   text-align: center;
-  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2); /* Increased box shadow */
 }
 
+.card-info button {
+  background-color: #000000;
+  color: #ffffff;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.card-info button:hover {
+  background-color: #565456;
+}
+.serviceTilte {
+  text-align: center;
+  font-size: 18px;
+ align-items: center;
+}
+
+
+
+
+
+/* Welcome Section */
+.welcome {
+  background: linear-gradient(to bottom right, #55355d, #a769a7);
+  padding: 20px 0;
+  text-align: center;
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 1s ease, transform 1s ease;
+}
+.welcome.animated {
+  opacity: 1; /* Show the section */
+  transform: translateY(0); /* Move the section up */
+}
 .welcome-content {
   max-width: 800px;
   margin: 0 auto;
 }
 
 .welcome-content h2 {
-  font-size: 48px; /* Increased font size */
+  font-size: 48px;
   font-weight: bold;
   margin-bottom: 30px;
   color: #fff;
-  animation: fadeInDown 1s ease-out; /* Apply animation */
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 1s ease, transform 1s ease;
 }
 
 .welcome-content p {
   font-size: 20px;
   line-height: 1.6;
   color: #efeaef;
-  animation: fadeInUp 1s ease-out; /* Apply animation */
+  animation: fadeInUp 1s ease-out;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 1s ease, transform 1s ease;
 }
-
+.welcome.animated .welcome-content h2,
+.welcome.animated .welcome-content p {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 0.5s; /* Delay the animation */
+}
 /* Contact Info */
 .contact-info {
   direction: rtl;
   text-align: right;
   font-family: Arial, sans-serif;
-  margin-top: 40px; /* Increased top margin */
+  margin-top: 40px;
   padding: 20px;
   border: 1px solid #ccc;
-  border-radius: 10px; /* Increased border radius */
-  background-color: rgba(255, 255, 255, 0.9); /* Added background color with transparency */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Added box shadow */
+  border-radius: 10px;
+  background-color: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.5s ease, box-shadow 0.5s ease; /* Smooth transition */
+}
+
+.contact-info:hover {
+  transform: scale(1.02); /* Scale up on hover */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Increase shadow on hover */
 }
 
 .info-item {
@@ -331,87 +319,104 @@ h1+p, p+p {
 }
 
 .info-item i {
-  margin-right: 10px; /* Increased margin */
-  color: #a769a7; /* Changed icon color */
+  margin-right: 10px;
+  color: #a769a7;
 }
-
 
 .info-item span {
-  font-size: 18px; /* Increased font size */
-  color: #333; /* Darker color for text */
+  font-size: 18px;
+  color: #333;
   font-weight: bold;
 }
 
 
-
-
-
-
-
-
-
-
-
-
+/* Container for workers */
 .workers {
   display: flex;
-  justify-content: space-around;
-  align-items: flex-start; /* Align items at the start of the flex container */
-  height: auto; /* Auto height to accommodate content */
-  margin-top: 20px; /* Add margin at the top */
+  justify-content: center;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding: 20px;
 }
 
+/* Individual worker card */
 .worker {
+  flex: 1 1 calc(33.33% - 20px); /* Adjust width for better layout */
+  max-width: 300px; /* Limit maximum width */
   text-align: center;
-  margin-bottom: 20px; /* Add margin between cards */
 }
 
-.worker-card  {
-  width: 300px;
-  background-color: #fff;
+/* Worker card styling */
+.worker-card {
+  width: 100%;
+  background-color: #1c1c1c;
+
   border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border: 2px solid transparent; /* Add border */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   overflow: hidden;
   opacity: 0;
-  animation: fadeIn 1s ease-out forwards;
+  transform: translateY(20px);
+  animation: fadeInUp 1s ease-out forwards, borderFade 0.3s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease, opacity 0.3s ease, border-color 0.3s ease; /* Add border-color transition */
 }
 
+
+/* Image styling */
 .worker img {
   width: 100%;
-  height: 250px; /* Fixed height for all images */
-  object-fit: cover; /* Ensure images cover their container */
+  height: 200px;
+  object-fit: cover;
   border-radius: 10px 10px 0 0;
-  transition: transform 0.3s ease-in-out;
+  transition: transform 0.3s ease;
 }
 
-.worker:hover .card {
-  transform: translateY(-10px);
+/* Hover effect on image */
+.worker:hover img {
+  transform: scale(1.05);
 }
 
-.worker img:hover {
-  transform: scale(1.1);
-}
-
+/* Worker name styling */
 .name {
-  margin: 10px 0;
-  font-size: 18px;
+  margin: 15px 0; /* Increase top margin for better spacing */
+  font-size: 22px; /* Adjust font size for better readability */
   font-weight: bold;
+  color: #ffffff; /* Text color set to white */
+  transition: color 0.3s ease;
 }
 
+/* Hover effect on worker name */
+
+
+/* Worker description styling */
 .description {
-  font-size: 14px;
-  color: #555;
-  margin-bottom: 10px; /* Add margin at the bottom */
+  font-size: 16px;
+  color: #ffffff; /* Text color set to white */
+  margin-bottom: 20px;
 }
 
-
-@keyframes fadeIn {
+/* Keyframe animation for fadeInUp */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
   to {
     opacity: 1;
+    transform: translateY(0);
   }
 }
 
-
+/* Keyframe animation for borderFade */
+@keyframes borderFade {
+  from {
+    border-color: transparent;
+  }
+  to {
+    border-color: #55355d;
+  }
+}
 
 
 /* Add your custom CSS styles here */
@@ -464,9 +469,13 @@ button:hover {
 
 footer {
 
-  background-color: #e9e0e9; /* Set background color */
+  background-color: #ffffff; /* Set background color */
   color: #000000; /* Set text color */
-  padding: 20px 0; /* Add padding */
+  padding: 20px 0; /* Add padding */  
+  
+  border-top: 2px solid #000; /* Add top border with 2px width and black color */
+
+
 }
 
 .footer-content {

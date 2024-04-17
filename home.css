@@ -705,10 +705,59 @@ font-size: xx-large;
   flex: 0 0 45%; /* Adjust worker card width */
 }
 
+
+
+
+
+/* Adjustments for workers */
+.workers {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px; /* Add gap between worker cards */
+}
+
+/* Adjustments for worker cards */
+.worker {
+  flex: 1 1 calc(50% - 20px); /* Adjust width to fit two cards in a row with gap */
+  max-width: 300px; /* Limit maximum width */
+  text-align: center;
+}
+
+/* Adjustments for worker card styling */
 .worker-card {
   width: 100%;
   background-color: #1c1c1c;
-  height: 30%;
+  border-radius: 10px;
+  border: 2px solid transparent;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 1s ease-out forwards, borderFade 0.3s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease, opacity 0.3s ease, border-color 0.3s ease;
+}
+
+/* Keyframe animation for fadeInUp */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Keyframe animation for borderFade */
+@keyframes borderFade {
+  from {
+    border-color: transparent;
+  }
+  to {
+    border-color: #55355d;
+  }
 }
 
 /* Adjustments for video container */

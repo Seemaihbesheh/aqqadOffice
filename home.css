@@ -520,7 +520,7 @@ footer {
 
 
 /* Adjustments for smaller screens */
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 375px) {
   section {
     width: 90%; /* Adjust width of sections */
 
@@ -659,34 +659,6 @@ font-size: xx-large;
   width: calc(50% - 20px); /* Adjust width to fit two cards in a row */
   margin: 20px; /* Adjust margin */
 }
-
-.card-info {
-  padding: 20px;
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  color: #fff;
-  opacity: 1; /* Change opacity to 1 to make it always visible */
-  transform: translateY(0); /* Remove transformation */
-}
-
-.card-info button {
-  background-color: #000000;
-  color: #ffffff;
-  border: none;
-  padding: 10px 20px;
-  font-size: 16px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-.card-info button:hover {
-  background-color: #565456;
-}
-
-
-
 
 .workers {
   margin-left: auto; /* Reset left margin */

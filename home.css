@@ -519,6 +519,12 @@ footer {
 
 
 
+
+
+
+
+
+
 /* Adjustments for smaller screens */
 @media only screen and (max-width: 768px) {
   section {
@@ -659,7 +665,16 @@ font-size: xx-large;
   width: calc(50% - 20px); /* Adjust width to fit two cards in a row */
   margin: 20px; /* Adjust margin */
 }
-
+.card-info {
+  padding: 20px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  color: #fff;
+  opacity: 1; /* Change opacity to 1 to make it always visible */
+  transform: translateY(0); /* Remove transformation */
+}
 .workers {
   margin-left: auto; /* Reset left margin */
   margin-right: auto; /* Reset right margin */

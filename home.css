@@ -619,6 +619,12 @@ font-size: xx-large;
   font-size: medium;
   }
 
+  .welcome.animated .welcome-content h2,
+  .welcome.animated .welcome-content p {
+    opacity: 1;
+    transform: translateY(0);
+    transition-delay: 0s; /* Set transition delay to 0s */
+  }
 .contact-info{
   padding: 10px;
 }

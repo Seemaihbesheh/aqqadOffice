@@ -2,7 +2,9 @@
 body {
   background: #ffffff;
 }
-
+.mobile-logo{
+  width: 130px; height: 90px; margin-right: -460px;
+}
 section {
   margin: 0 auto;
   text-align: center;
@@ -527,6 +529,12 @@ footer {
 
 /* Adjustments for smaller screens */
 @media only screen and (max-width: 768px) {
+
+  .mobile-logo{
+    width: 130px; height: 90px; margin-right: -360px;
+  }
+
+
   section {
     width: 90%; /* Adjust width of sections */
 

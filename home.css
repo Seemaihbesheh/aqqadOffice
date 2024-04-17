@@ -293,7 +293,7 @@ h1+p, p+p {
 .welcome.animated .welcome-content p {
   opacity: 1;
   transform: translateY(0);
-  transition-delay: 0.5s; /* Delay the animation */
+  transition-delay: 0.2s; /* Delay the animation */
 }
 /* Contact Info */
 .contact-info {
@@ -610,7 +610,7 @@ footer {
 font-size: xx-large;
 }
 .welcome-content p{
-  font-size: large;
+  font-size: medium;
   }
 
 .contact-info{
@@ -652,7 +652,6 @@ font-size: xx-large;
 
 
 .container {
-
   margin-right: 72%;
 }
 
@@ -660,6 +659,35 @@ font-size: xx-large;
   width: calc(50% - 20px); /* Adjust width to fit two cards in a row */
   margin: 20px; /* Adjust margin */
 }
+
+.card-info {
+  padding: 20px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  color: #fff;
+  opacity: 1; /* Change opacity to 1 to make it always visible */
+  transform: translateY(0); /* Remove transformation */
+}
+
+.card-info button {
+  background-color: #000000;
+  color: #ffffff;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.card-info button:hover {
+  background-color: #565456;
+}
+
+
+
+
 .workers {
   margin-left: auto; /* Reset left margin */
   margin-right: auto; /* Reset right margin */

@@ -3,9 +3,9 @@ body {
 }
 
 .mobile-logo {
-  width: 130px;
-  height: 90px;
-  margin-right: -460px;
+  width: 100px;
+  height: 60px;
+  margin-right: -410px;
 }
 
 section {
@@ -376,6 +376,8 @@ body {
 
 .worker-content {
   padding: 20px;
+  text-align: center;
+
 }
 
 .worker-name {
@@ -575,9 +577,7 @@ footer {
 @media only screen and (max-width: 768px) {
 
   .mobile-logo {
-    width: 130px;
-    height: 90px;
-    margin-right: -160px;
+  display: none;
   }
 
 
@@ -688,6 +688,8 @@ footer {
     transform: none;
     transition: none;
   }
+
+  
   .container {
     margin-right: 72%;
   }
@@ -711,24 +713,6 @@ footer {
     transform: translateY(0);
     /* Remove transformation */
   }
-/* 
-  .workers {
-    margin-left: auto;
-    margin-right: auto;
-  }
-
-  .workers {
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-
-  .worker {
-    margin-bottom: 20px;
-    flex: 0 0 45%;
-  }
-
- */
-
 
 
   /* Adjustments for workers */
@@ -763,12 +747,12 @@ footer {
     transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease, opacity 0.3s ease, border-color 0.3s ease;
   }
   .worker-name {
-    font-size: 13px;
+    font-size: 17px;
     font-weight: bold;
     margin-bottom: 10px;
   }
   .worker-description{
-    font-size: 8px;
+    font-size: 10px;
     font-weight: bold;
     margin-bottom: 10px;
   }

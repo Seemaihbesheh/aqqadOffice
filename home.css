@@ -271,57 +271,30 @@ p+p {
 
 
 
-
-
 /* Welcome Section */
 .welcome {
   background: linear-gradient(to bottom right, #55355d, #a769a7);
   padding: 20px 0;
   text-align: center;
   box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
-  opacity: 0;
-  transform: translateY(50px);
-  transition: opacity 1s ease, transform 1s ease;
-}
-
-.welcome.animated {
-  opacity: 1;
-  /* Show the section */
-  transform: translateY(0);
-  /* Move the section up */
 }
 
 .welcome-content {
-  max-width: 800px;
+  max-width: 90%; /* Adjusted for smaller screens */
   margin: 0 auto;
 }
 
 .welcome-content h2 {
-  font-size: 48px;
+  font-size: 32px; /* Reduced font size */
   font-weight: bold;
-  margin-bottom: 30px;
+  margin-bottom: 20px; /* Reduced margin */
   color: #fff;
-  opacity: 0;
-  transform: translateY(20px);
-  transition: opacity 1s ease, transform 1s ease;
 }
 
 .welcome-content p {
-  font-size: 20px;
-  line-height: 1.6;
+  font-size: 16px; /* Reduced font size */
+  line-height: 1.4; /* Adjusted line height */
   color: #efeaef;
-  animation: fadeInUp 1s ease-out;
-  opacity: 0;
-  transform: translateY(20px);
-  transition: opacity 1s ease, transform 1s ease;
-}
-
-.welcome.animated .welcome-content h2,
-.welcome.animated .welcome-content p {
-  opacity: 1;
-  transform: translateY(0);
-  transition-delay: 0.2s;
-  /* Delay the animation */
 }
 
 /* Contact Info */
@@ -329,34 +302,30 @@ p+p {
   direction: rtl;
   text-align: right;
   font-family: Arial, sans-serif;
-  margin-top: 40px;
-  padding: 20px;
+  margin-top: 20px; /* Reduced margin */
+  padding: 15px; /* Reduced padding */
   border: 1px solid #ccc;
   border-radius: 10px;
   background-color: rgba(255, 255, 255, 0.9);
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  transition: transform 0.5s ease, box-shadow 0.5s ease;
-  /* Smooth transition */
 }
 
 .contact-info:hover {
-  transform: scale(1.02);
-  /* Scale up on hover */
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-  /* Increase shadow on hover */
+  transform: none; /* Remove transform on hover */
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2); /* Adjusted shadow */
 }
 
 .info-item {
-  margin-bottom: 15px;
+  margin-bottom: 10px; /* Reduced margin */
 }
 
 .info-item i {
-  margin-right: 10px;
+  margin-right: 8px; /* Reduced margin */
   color: #a769a7;
 }
 
 .info-item span {
-  font-size: 18px;
+  font-size: 14px; /* Reduced font size */
   color: #333;
   font-weight: bold;
 }
@@ -575,7 +544,7 @@ footer {
   .mobile-logo {
     width: 130px;
     height: 90px;
-    margin-right: -210px;
+    margin-right: -160px;
   }
 
 
@@ -680,80 +649,12 @@ footer {
     /* Apply animation forwards */
   }
 
-
-
-
-
-  /* Animation for welcome section */
-  .welcome {
-    opacity: 0;
-    transform: translateY(20px);
-    /* Initial position off-screen */
-    animation: fadeInUp 1s ease forwards;
-    /* Apply animation forwards */
-  }
-
-  .welcome-content h2 {
-    font-size: xx-large;
-  }
-
-  .welcome-content p {
-    font-size: medium;
-  }
-
   .welcome.animated .welcome-content h2,
   .welcome.animated .welcome-content p {
     opacity: 1;
-    transform: translateY(0);
-    transition-delay: 0s;
-    /* Set transition delay to 0s */
+    transform: none;
+    transition: none;
   }
-
-  .contact-info {
-    padding: 10px;
-  }
-
-  .info-item {
-    margin-bottom: 15px;
-  }
-
-  .info-item i {
-    margin-right: 10px;
-    /* Increased margin */
-    color: #a769a7;
-    /* Changed icon color */
-  }
-
-
-  .info-item span {
-    font-size: 15px;
-    /* Increased font size */
-    color: #333;
-    /* Darker color for text */
-    font-weight: bold;
-    margin-left: 70px;
-  }
-
-
-
-  @keyframes fadeInUp {
-    0% {
-      opacity: 0;
-      transform: translateY(20px);
-      /* Initial position off-screen */
-    }
-
-    100% {
-      opacity: 1;
-      transform: translateY(0);
-      /* Move to original position */
-    }
-  }
-
-
-  /* Adjustments for card-wrap and workers */
-
-
   .container {
     margin-right: 72%;
   }

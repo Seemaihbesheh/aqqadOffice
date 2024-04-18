@@ -689,7 +689,7 @@ footer {
     transition: none;
   }
 
-  
+
   .container {
     margin-right: 72%;
   }
@@ -747,12 +747,12 @@ footer {
     transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease, opacity 0.3s ease, border-color 0.3s ease;
   }
   .worker-name {
-    font-size: 17px;
+    font-size: 15px;
     font-weight: bold;
     margin-bottom: 10px;
   }
   .worker-description{
-    font-size: 10px;
+    font-size: 13px;
     font-weight: bold;
     margin-bottom: 10px;
   }

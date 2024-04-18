@@ -11,7 +11,11 @@
 </head>
 
 <body>
-
+  <div class="notification-card">
+    <p>Contact us on WhatsApp</p>
+    <button class="whatsapp-button">Open Chat</button>
+  </div>
+  
   <div style="text-align: center;">
     <div style="display: inline-block;">
       <img class="mobile-logo" src="./images/logo.png" alt="Logo">
@@ -21,6 +25,7 @@
             font-family: 'Lato', sans-serif;
             font-size: 3em;
             font-weight: 300;
+            color: #ffffff;
             margin: 0 10px -60px; /* Adjusted margin */
         ">مكتب العقاد الهندسي</h1>
     </div>
@@ -86,7 +91,7 @@
   <div class="video-section">
     <!-- Video Container with Title -->
     <div class="video-container">
-      <h1> مشاريعنا</h1>
+      <h1 style="color: #ffffff;"> مشاريعنا</h1>
       <div class="tiktok">
         <iframe
           src="https://www.tiktok.com/embed/v2/7350054541645106439?lang=en-US&is_copy_url=0&is_from_webapp=v1&sender_device=pc&sender_web_id=7010426192464468494"
@@ -116,27 +121,29 @@
   </footer>
   <script>
 
-    document.addEventListener("DOMContentLoaded", function () {
-      window.addEventListener("scroll", function () {
-        const elements = document.querySelectorAll(".animate-on-scroll");
-        elements.forEach(function (element) {
-          if (isElementInViewport(element)) {
-            element.classList.add("animated");
-          }
-        });
-      });
-
-      function isElementInViewport(el) {
-        var rect = el.getBoundingClientRect();
-        return (
-          rect.top >= 0 &&
-          rect.left >= 0 &&
-          rect.bottom <=
-          (window.innerHeight || document.documentElement.clientHeight) &&
-          rect.right <= (window.innerWidth || document.documentElement.clientWidth)
-        );
+document.addEventListener("DOMContentLoaded", function () {
+  window.addEventListener("scroll", function () {
+    const elements = document.querySelectorAll(".animate-on-scroll");
+    elements.forEach(function (element) {
+      if (isElementInViewport(element)) {
+        element.classList.add("in-view");
+      } else {
+        element.classList.remove("in-view");
       }
     });
+  });
+
+  function isElementInViewport(el) {
+    var rect = el.getBoundingClientRect();
+    return (
+      rect.top >= 0 &&
+      rect.left >= 0 &&
+      rect.bottom <=
+        (window.innerHeight || document.documentElement.clientHeight) &&
+      rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+    );
+  }
+});
 
 
     document.addEventListener("DOMContentLoaded", function () {
@@ -232,7 +239,7 @@
             <button onclick="viewMore(${index + 1})">رؤية المزيد ..</button>
           </div>   
         </div>
-        <h2 style="text-align: center">${service.title}</h2>
+        <h3 style="text-align: center; color: #ffffff; white-space: nowrap;">${service.title}</h3>
       </div>
     `;
         appContainer.appendChild(cardWrap);
@@ -294,7 +301,14 @@
       );
     }
 
+    document.addEventListener('DOMContentLoaded', function() {
+    const whatsappButton = document.querySelector('.whatsapp-button');
 
+    whatsappButton.addEventListener('click', function() {
+      // Replace '123456789' with your WhatsApp number
+      window.open('https://wa.me/972592849217', '_blank');
+    });
+  });
 
 
   </script>

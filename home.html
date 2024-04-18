@@ -12,11 +12,9 @@
 
 <body>
 
-
-
   <div style="text-align: center;">
     <div style="display: inline-block;">
-      <img src="./images/logo.png" alt="Logo" style="width: 130px; height: 90px; margin-right: -460px;">
+      <img class="mobile-logo" src="./images/logo.png" alt="Logo">
     </div>
     <div style="display: inline-block; vertical-align: middle;">
       <h1 style="
@@ -28,34 +26,24 @@
     </div>
   </div>
 
-
-
-
   <section id="hexSection">
     <!-- Hexagons will be dynamically added here -->
   </section>
 
-
   <section id="hexMobile">
     <div class="big-image">
-      <img src='./images/majd/majd0 - Copy.png' alt="Big Image">
+      <img src='./images/majd/majd0 - Copy.png' alt="Big Image" loading="lazy">
       <div class="small-image">
-        <img src='./images/ishraf/ishraf4.png' alt="Small Image">
+        <img src='./images/ishraf/ishraf4.png' alt="Small Image" loading="lazy">
       </div>
     </div>
   </section>
 
-
-
   <div style="height: 200px;"></div>
-
-
-
 
   <section class="welcome animate-on-scroll">
     <div class="welcome-content">
       <h2>مكتب العقاد الهندسي يرحب بكم</h2>
-
       <p>
         مكتب هندسي متخصص في التصميم والإشراف الهندسي - التصميم الداخلي والخارجي وتراخيص المنشآت
         السكنية والتجارية والصناعية والزراعية - تحضير العطاءات والاشراف عليها
@@ -66,8 +54,7 @@
     </div>
   </section>
 
-
-
+  <!-- Remaining HTML code with lazy loading attributes -->
 
   <div style="height: 100px;"></div>
 
@@ -127,46 +114,43 @@
     </div>
 
   </footer>
-
-
-
   <script>
 
-document.addEventListener("DOMContentLoaded", function () {
-  window.addEventListener("scroll", function () {
-    const elements = document.querySelectorAll(".animate-on-scroll");
-    elements.forEach(function (element) {
-      if (isElementInViewport(element)) {
-        element.classList.add("animated");
+    document.addEventListener("DOMContentLoaded", function () {
+      window.addEventListener("scroll", function () {
+        const elements = document.querySelectorAll(".animate-on-scroll");
+        elements.forEach(function (element) {
+          if (isElementInViewport(element)) {
+            element.classList.add("animated");
+          }
+        });
+      });
+
+      function isElementInViewport(el) {
+        var rect = el.getBoundingClientRect();
+        return (
+          rect.top >= 0 &&
+          rect.left >= 0 &&
+          rect.bottom <=
+          (window.innerHeight || document.documentElement.clientHeight) &&
+          rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+        );
       }
     });
-  });
-
-  function isElementInViewport(el) {
-    var rect = el.getBoundingClientRect();
-    return (
-      rect.top >= 0 &&
-      rect.left >= 0 &&
-      rect.bottom <=
-        (window.innerHeight || document.documentElement.clientHeight) &&
-      rect.right <= (window.innerWidth || document.documentElement.clientWidth)
-    );
-  }
-});
 
 
     document.addEventListener("DOMContentLoaded", function () {
       const hexData = [
-        { image: './images/majd/majd0.png', descClass: '' },
-        { image: './images/majd/majd1.png', descClass: '' },
+        { image: './images/majd/majd0.png', descClass: '',loading:"lazy" },
+        { image: './images/majd/majd1.png', descClass: '' ,loading:"lazy" },
 
-        { image: './images/majd/amenah.png', descClass: '' },
+        { image: './images/majd/amenah.png', descClass: '' ,loading:"lazy" },
 
-        { image: './images/majd/majd6.png', descClass: '' },
-        { image: './images/majd/ishraf5.png', descClass: '' },
-        { image: './images/majd/majd12.png', descClass: '' },
-        { image: './images/majd/majd4.png', descClass: '' },
-        
+        { image: './images/majd/majd6.png', descClass: '',loading:"lazy"  },
+        { image: './images/majd/ishraf5.png', descClass: '' ,loading:"lazy" },
+        { image: './images/majd/majd12.png', descClass: '',loading:"lazy"  },
+        { image: './images/majd/majd4.png', descClass: '',loading:"lazy"  },
+
       ];
 
       const section = document.getElementById("hexSection");
@@ -230,10 +214,10 @@ document.addEventListener("DOMContentLoaded", function () {
 
     document.addEventListener("DOMContentLoaded", function () {
       const servicesData = [
-        { image: './images/eshraf.jpg', title: 'اشراف' },
-        { image: './images/tasmem.jpg', title: ' تصميم وتراخيص' },
-        { image: './images/dekor_dakhli.jpg', title: 'ديكور داخلي' },
-        { image: './images/dekor_khargi.jpg', title: 'ديكور خارجي' },
+        { image: './images/eshraf.jpg', title: 'اشراف',loading:"lazy"  },
+        { image: './images/tasmem.jpg', title: ' تصميم وتراخيص',loading:"lazy"  },
+        { image: './images/dekor_dakhli.jpg', title: 'ديكور داخلي',loading:"lazy"  },
+        { image: './images/dekor_khargi.jpg', title: 'ديكور خارجي' ,loading:"lazy" },
 
 
       ];
@@ -274,11 +258,11 @@ document.addEventListener("DOMContentLoaded", function () {
 
     document.addEventListener("DOMContentLoaded", function () {
       const workersData = [
-      { name: "م. مجد العقاد", description: " رئيسة اختصاص مدني ", image: "./images/majd/majd0 - Copy.png" },
-      { name: "م.امنة العقاد", description: "رئيسة اختصاص معماري", image: "./images/amna.png" },
-      { name: "م. محي الدين ابو عبيد", description: "مهندس مدني ومساحة", image: "./images/moh3.png" },
+        { name: "م. مجد العقاد", description: " رئيسة اختصاص مدني ", image: "./images/majd/majd0 - Copy.png" ,loading:"lazy" },
+        { name: "م.امنة العقاد", description: "رئيسة اختصاص معماري", image: "./images/amna.png",loading:"lazy"  },
+        { name: "م. محي الدين ابو عبيد", description: "مهندس مدني ومساحة", image: "./images/moh3.png" ,loading:"lazy" },
 
-        { name: "م. زين شحبري", description: "مهندسة معماري", image: "./images/zain.png" },
+        { name: "م. زين شحبري", description: "مهندسة معماري", image: "./images/zain.png",loading:"lazy"  },
 
 
 
@@ -291,7 +275,7 @@ document.addEventListener("DOMContentLoaded", function () {
         workerDiv.className = "worker";
         workerDiv.innerHTML = `
           <div class="worker-card">
-            <img src="${worker.image}" alt="${worker.name}" />
+            <img src="${worker.image}" alt="${worker.name}" loading="lazy" />
             <div class="name">${worker.name}</div>
             <div class="description">${worker.description}</div>
           </div>
@@ -300,7 +284,26 @@ document.addEventListener("DOMContentLoaded", function () {
       });
     });
 
-    
+    window.addEventListener("scroll", function () {
+      const elements = document.querySelectorAll(".animate-on-scroll");
+      elements.forEach(function (element) {
+        if (isElementInViewport(element)) {
+          element.classList.add("animated");
+        }
+      });
+    });
+
+    function isElementInViewport(el) {
+      var rect = el.getBoundingClientRect();
+      return (
+        rect.top >= 0 &&
+        rect.left >= 0 &&
+        rect.bottom <=
+        (window.innerHeight || document.documentElement.clientHeight) &&
+        rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+      );
+    }
+
   </script>
 </body>
 

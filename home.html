@@ -211,98 +211,91 @@
 
 
 
-
     document.addEventListener("DOMContentLoaded", function () {
-      const servicesData = [
-        { image: './images/eshraf.jpg', title: 'اشراف',loading:"lazy"  },
-        { image: './images/tasmem.jpg', title: ' تصميم وتراخيص',loading:"lazy"  },
-        { image: './images/dekor_dakhli.jpg', title: 'ديكور داخلي',loading:"lazy"  },
-        { image: './images/dekor_khargi.jpg', title: 'ديكور خارجي' ,loading:"lazy" },
+  const servicesData = [
+    { image: './images/eshraf.jpg', title: 'اشراف' },
+    { image: './images/tasmem.jpg', title: ' تصميم وتراخيص' },
+    { image: './images/dekor_dakhli.jpg', title: 'ديكور داخلي' },
+    { image: './images/dekor_khargi.jpg', title: 'ديكور خارجي' },
+  ];
 
+  const appContainer = document.getElementById("app");
 
-      ];
-
-      const appContainer = document.getElementById("app");
-
-      servicesData.forEach((service, index) => {
-        const cardWrap = document.createElement("div");
-        cardWrap.className = "card-wrap";
-        cardWrap.innerHTML = `
-
-        <div> 
-        <div class="card" style="background-image: url('${service.image}');">         
+  servicesData.forEach((service, index) => {
+    const cardWrap = document.createElement("div");
+    cardWrap.className = "card-wrap";
+    cardWrap.innerHTML = `
+      <div> 
+        <div class="card" style="background-image: url('${service.image}');" loading="lazy">         
           <div class="card-bg"></div>    
           <div class="card-info">       
-            <button  onclick="viewMore(${index + 1})">رؤية المزيد ..</button>
+            <button onclick="viewMore(${index + 1})">رؤية المزيد ..</button>
           </div>   
         </div>
-        <h2 class="">${service.title}</h1>
-        </div>
-      `;
-        appContainer.appendChild(cardWrap);
-      });
-    });
+        <h2 class="">${service.title}</h2>
+      </div>
+    `;
+    appContainer.appendChild(cardWrap);
+  });
+});
+
+function viewMore(id) {
+  window.location.href = `services.html?id=${id}`;
+}
 
 
 
-    function viewMore(id) {
-      window.location.href = `services.html?id=${id}`;
+
+
+document.addEventListener("DOMContentLoaded", function () {
+  const workersData = [
+    { name: "م. مجد العقاد", description: " رئيسة اختصاص مدني ", image: "./images/majd/majd0 - Copy.png" },
+    { name: "م.امنة العقاد", description: "رئيسة اختصاص معماري", image: "./images/amna.png" },
+    { name: "م. محي الدين ابو عبيد", description: "مهندس مدني ومساحة", image: "./images/moh3.png" },
+    { name: "م. زين شحبري", description: "مهندسة معماري", image: "./images/zain.png" }
+  ];
+
+  const workersContainer = document.getElementById("workers");
+
+  workersData.forEach(worker => {
+    const workerDiv = document.createElement("div");
+    workerDiv.className = "worker";
+    workerDiv.innerHTML = `
+      <img src="${worker.image}" alt="${worker.name}" loading="lazy" />
+      <div class="worker-content">
+        <div class="worker-name">${worker.name}</div>
+        <div class="worker-description">${worker.description}</div>
+      </div>
+    `;
+    workersContainer.appendChild(workerDiv);
+  });
+});
+
+
+
+
+
+window.addEventListener("scroll", function () {
+  const elements = document.querySelectorAll(".animate-on-scroll");
+  elements.forEach(function (element) {
+    if (isElementInViewport(element)) {
+      element.classList.add("animated");
     }
+  });
+});
+
+function isElementInViewport(el) {
+  const rect = el.getBoundingClientRect();
+  return (
+    rect.top >= 0 &&
+    rect.left >= 0 &&
+    rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+    rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+  );
+}
 
 
 
-
-
-
-
-
-    document.addEventListener("DOMContentLoaded", function () {
-      const workersData = [
-        { name: "م. مجد العقاد", description: " رئيسة اختصاص مدني ", image: "./images/majd/majd0 - Copy.png" ,loading:"lazy" },
-        { name: "م.امنة العقاد", description: "رئيسة اختصاص معماري", image: "./images/amna.png",loading:"lazy"  },
-        { name: "م. محي الدين ابو عبيد", description: "مهندس مدني ومساحة", image: "./images/moh3.png" ,loading:"lazy" },
-
-        { name: "م. زين شحبري", description: "مهندسة معماري", image: "./images/zain.png",loading:"lazy"  },
-
-
-
-      ];
-
-      const workersContainer = document.getElementById("workers");
-
-      workersData.forEach(worker => {
-        const workerDiv = document.createElement("div");
-        workerDiv.className = "worker";
-        workerDiv.innerHTML = `
-          <div class="worker-card">
-            <img src="${worker.image}" alt="${worker.name}" loading="lazy" />
-            <div class="name">${worker.name}</div>
-            <div class="description">${worker.description}</div>
-          </div>
-        `;
-        workersContainer.appendChild(workerDiv);
-      });
-    });
-
-    window.addEventListener("scroll", function () {
-      const elements = document.querySelectorAll(".animate-on-scroll");
-      elements.forEach(function (element) {
-        if (isElementInViewport(element)) {
-          element.classList.add("animated");
-        }
-      });
-    });
-
-    function isElementInViewport(el) {
-      var rect = el.getBoundingClientRect();
-      return (
-        rect.top >= 0 &&
-        rect.left >= 0 &&
-        rect.bottom <=
-        (window.innerHeight || document.documentElement.clientHeight) &&
-        rect.right <= (window.innerWidth || document.documentElement.clientWidth)
-      );
-    }
 
   </script>
 </body>

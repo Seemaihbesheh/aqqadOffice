@@ -285,14 +285,14 @@ p+p {
 }
 
 .welcome-content h2 {
-  font-size: 32px; /* Reduced font size */
+  font-size: 38px; /* Reduced font size */
   font-weight: bold;
   margin-bottom: 20px; /* Reduced margin */
   color: #fff;
 }
 
 .welcome-content p {
-  font-size: 16px; /* Reduced font size */
+  font-size: 20px; /* Reduced font size */
   line-height: 1.4; /* Adjusted line height */
   color: #efeaef;
 }
@@ -538,13 +538,46 @@ footer {
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /* Adjustments for smaller screens */
 @media only screen and (max-width: 768px) {
 
   .mobile-logo {
     width: 130px;
     height: 90px;
-    margin-right: -160px;
+    margin-right: -90px;
   }
 
 
@@ -678,30 +711,23 @@ footer {
     transform: translateY(0);
     /* Remove transformation */
   }
-
+/* 
   .workers {
     margin-left: auto;
-    /* Reset left margin */
     margin-right: auto;
-    /* Reset right margin */
   }
 
-  /* Adjustments for workers */
   .workers {
     flex-wrap: wrap;
-    /* Wrap workers */
     justify-content: center;
-    /* Center align workers */
   }
 
   .worker {
     margin-bottom: 20px;
-    /* Adjust margin */
     flex: 0 0 45%;
-    /* Adjust worker card width */
   }
 
-
+ */
 
 
 
@@ -736,7 +762,17 @@ footer {
     animation: fadeInUp 1s ease-out forwards, borderFade 0.3s ease;
     transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease, opacity 0.3s ease, border-color 0.3s ease;
   }
-
+  .worker-name {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  .worker-description{
+    font-size: 14px;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
   /* Keyframe animation for fadeInUp */
   @keyframes fadeInUp {
     from {
